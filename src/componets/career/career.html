@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerMind AI - Career Progress</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="career.css">
+</head>
+
+<body>
+
+    <!-- ==================================================
+         CAREER PROGRESS PAGE
+    ================================================== -->
+
+    <main
+        class="career-progress-page"
+        id="careerProgressPage">
+
+        <section class="career-progress-section">
+
+
+            <!-- ==================================================
+                 HEADER
+            ================================================== -->
+
+            <div class="progress-header">
+
+                <div>
+
+                    <span class="progress-eyebrow">
+                        CAREER DEVELOPMENT
+                    </span>
+
+                    <h1 class="progress-title">
+                        Career Progress
+                    </h1>
+
+                    <p class="progress-description">
+                        Track your growth across important
+                        career development areas.
+                    </p>
+
+                </div>
+
+
+                <span class="progress-status">
+                    On Track
+                </span>
+
+            </div>
+
+
+            <!-- ==================================================
+                 OVERALL PROGRESS CARD
+            ================================================== -->
+
+            <div class="overall-progress-card">
+
+
+                <div class="overall-header">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            OVERALL PROGRESS
+                        </span>
+
+                        <h2>
+                            Your Career Journey
+                        </h2>
+
+                        <p>
+                            Your current career development
+                            progress based on your activities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================================================
+                     GRAPH + SUMMARY
+                ================================================== -->
+
+                <div class="overall-content">
+
+
+                    <!-- Circular Progress -->
+
+                    <div class="overall-circle-container">
+
+                        <div
+                            class="overall-circle"
+                            id="overallCircle">
+
+                            <div class="overall-circle-center">
+
+                                <strong
+                                    id="overallPercentage">
+                                    72%
+                                </strong>
+
+                                <span>
+                                    Overall
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Summary -->
+
+                    <div class="progress-summary">
+
+                        <div class="summary-item">
+
+                            <span>
+                                Skills
+                            </span>
+
+                            <strong>
+                                80%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                Projects
+                            </span>
+
+                            <strong>
+                                70%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                Learning
+                            </span>
+
+                            <strong>
+                                75%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                Career Readiness
+                            </span>
+
+                            <strong>
+                                65%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 PROGRESS COMPARISON
+            ================================================== -->
+
+            <div class="progress-breakdown-card">
+
+
+                <div class="breakdown-header">
+
+                    <div>
+
+                        <h3>
+                            Progress Breakdown
+                        </h3>
+
+                        <p>
+                            Compare your development
+                            across different areas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Skills -->
+
+                <div class="progress-item">
+
+                    <div class="progress-item-header">
+
+                        <div>
+
+                            <span class="progress-icon">
+                                💻
+                            </span>
+
+                            <strong>
+                                Skills
+                            </strong>
+
+                        </div>
+
+                        <span id="skillsPercentage">
+                            80%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill skills-fill"
+                            id="skillsBar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Projects -->
+
+                <div class="progress-item">
+
+                    <div class="progress-item-header">
+
+                        <div>
+
+                            <span class="progress-icon">
+                                🚀
+                            </span>
+
+                            <strong>
+                                Projects
+                            </strong>
+
+                        </div>
+
+                        <span id="projectsPercentage">
+                            70%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill projects-fill"
+                            id="projectsBar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Learning -->
+
+                <div class="progress-item">
+
+                    <div class="progress-item-header">
+
+                        <div>
+
+                            <span class="progress-icon">
+                                📚
+                            </span>
+
+                            <strong>
+                                Learning
+                            </strong>
+
+                        </div>
+
+                        <span id="learningPercentage">
+                            75%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill learning-fill"
+                            id="learningBar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Career Readiness -->
+
+                <div class="progress-item">
+
+                    <div class="progress-item-header">
+
+                        <div>
+
+                            <span class="progress-icon">
+                                🎯
+                            </span>
+
+                            <strong>
+                                Career Readiness
+                            </strong>
+
+                        </div>
+
+                        <span id="readinessPercentage">
+                            65%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill readiness-fill"
+                            id="readinessBar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+ <!-- ==================================================
+     INTERACTIVE CAREER INSIGHT
+================================================== -->
+
+<div class="career-insight-card" id="careerInsightCard">
+
+    <div class="insight-main">
+
+        <div class="insight-icon-large">
+            💡
+        </div>
+
+        <div class="insight-content">
+
+            <span class="insight-label">
+                AI CAREER INSIGHT
+            </span>
+
+            <h3>
+                Your Career Development
+            </h3>
+
+            <p id="progressInsight">
+                You are making steady progress.
+                Continue improving your technical skills
+                and completing practical projects.
+            </p>
+
+        </div>
+
+        <button
+            class="insight-button"
+            id="insightButton"
+            type="button">
+
+            View Analysis
+            <span>→</span>
+
+        </button>
+
+    </div>
+
+
+    <!-- Expandable Analysis -->
+
+    <div
+        class="insight-analysis"
+        id="insightAnalysis"
+        aria-hidden="true">
+
+        <div class="analysis-divider"></div>
+
+        <div class="analysis-grid">
+
+            <div class="analysis-item">
+
+                <span class="analysis-icon">
+                    💻
+                </span>
+
+                <div>
+
+                    <strong>
+                        Skills
+                    </strong>
+
+                    <p id="insightSkills">
+                        Strong technical foundation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="analysis-item">
+
+                <span class="analysis-icon">
+                    🚀
+                </span>
+
+                <div>
+
+                    <strong>
+                        Projects
+                    </strong>
+
+                    <p id="insightProjects">
+                        Continue building practical projects
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="analysis-item">
+
+                <span class="analysis-icon">
+                    📚
+                </span>
+
+                <div>
+
+                    <strong>
+                        Learning
+                    </strong>
+
+                    <p id="insightLearning">
+                        Maintain consistent learning
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="analysis-item">
+
+                <span class="analysis-icon">
+                    🎯
+                </span>
+
+                <div>
+
+                    <strong>
+                        Career Readiness
+                    </strong>
+
+                    <p id="insightReadiness">
+                        Focus on practical experience
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="career.js"></script>
+
+</body>
+
+</html>

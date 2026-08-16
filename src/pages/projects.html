@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../componets/navbar/navbar.css">
+<link rel="stylesheet" href="../componets/sidebar/sidebar.css">
+<link rel="stylesheet" href="../componets/memory/memory.css">
+</head>
+<body>
+
+  <!-- NAVBAR COMPONENT -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="dashboard.html" class="brand-link">
+        <div class="brand-icon">✦</div>
+        <div class="brand-name">CareerMind <span>AI</span></div>
+      </a>
+    </div>
+    <div class="navbar-actions">
+      <button class="notification-button" id="notificationBtn" type="button" aria-label="Notifications">
+        <span class="notification-icon">🔔</span>
+        <span class="notification-badge" id="notificationBadge">2</span>
+      </button>
+      <div class="profile-container">
+        <button class="navbar-profile" id="profileDropdownBtn" type="button" aria-label="Open profile menu" aria-expanded="false">
+          <div class="profile-avatar">DF</div>
+          <div class="profile-info">
+            <span class="profile-name">Dipanshu Fulzele</span>
+            <span class="profile-role">Web Developer</span>
+          </div>
+          <span class="profile-arrow" id="profileArrow">⌄</span>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <a href="career-profile.html" class="profile-menu-item">
+            <span>👤</span><span>My Profile</span>
+          </a>
+          <a href="memory-center.html" class="profile-menu-item">
+            <span>🧠</span><span>My Memory</span>
+          </a>
+          <a href="career-assistant.html" class="profile-menu-item">
+            <span>✦</span><span>AI Assistant</span>
+          </a>
+          <div class="profile-menu-divider"></div>
+          <button class="profile-menu-item logout-item" id="logoutBtn" type="button">
+            <span>🚪</span><span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- APP SHELL & SIDEBAR -->
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-section-title">MAIN</span>
+      </div>
+      <nav class="sidebar-navigation">
+        <a href="dashboard.html" class="sidebar-item" data-page="dashboard">
+          <span class="sidebar-icon">▦</span>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+        <a href="career-profile.html" class="sidebar-item" data-page="career-profile">
+          <span class="sidebar-icon">◎</span>
+          <span class="sidebar-text">Career Profile</span>
+        </a>
+        <a href="career-assistant.html" class="sidebar-item" data-page="career-assistant">
+          <span class="sidebar-icon">✦</span>
+          <span class="sidebar-text">AI Assistant</span>
+        </a>
+        <a href="roadmap.html" class="sidebar-item" data-page="roadmap">
+          <span class="sidebar-icon">◈</span>
+          <span class="sidebar-text">Career Roadmap</span>
+        </a>
+      </nav>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">CAREER MEMORY</span>
+        <a href="memory-center.html" class="sidebar-item" data-page="memory-center">
+          <span class="sidebar-icon">🧠</span>
+          <span class="sidebar-text">Memory Center</span>
+        </a>
+        <a href="projects.html" class="sidebar-item active" data-page="projects">
+          <span class="sidebar-icon">◇</span>
+          <span class="sidebar-text">Projects</span>
+        </a>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <div class="help-content">
+            <strong>Need help?</strong>
+            <span>Ask CareerMind AI</span>
+          </div>
+        </div>
+        <button class="sidebar-collapse" id="sidebarCollapse" type="button" aria-label="Collapse sidebar">
+          <span>«</span>
+          <span class="collapse-text">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+
+      <div class="page-head flex justify-between items-center" style="align-items:flex-end;">
+        <div>
+          <span class="eyebrow">Portfolio memory</span>
+          <h1>Projects</h1>
+          <p>Everything you've built — stored so the agent can reference it when giving advice.</p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="addProjectBtn">+ Add Project</button>
+      </div>
+
+      <div class="grid-3 mb-24" id="projectGrid">
+        <div class="memory-card">
+          <div class="memory-card-header">
+            <div class="memory-icon">💻</div>
+            <div class="memory-card-heading">
+              <span class="memory-category">HTML &amp; CSS</span>
+              <h4 class="memory-card-title">CareerMind Component Library</h4>
+            </div>
+          </div>
+          <p class="memory-card-content">Production-ready self-contained frontend components for CareerMind AI platform.</p>
+          <div class="memory-card-footer">
+            <span class="memory-updated">Shipped recently</span>
+            <span class="badge badge-accent">Featured</span>
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-card-header">
+            <div class="memory-icon">🚀</div>
+            <div class="memory-card-heading">
+              <span class="memory-category">JAVASCRIPT</span>
+              <h4 class="memory-card-title">Interactive AI Assistant Interface</h4>
+            </div>
+          </div>
+          <p class="memory-card-content">Responsive chat UI with real-time memory retrieval status and automated typing indicator.</p>
+          <div class="memory-card-footer">
+            <span class="memory-updated">Shipped 2 weeks ago</span>
+            <span class="badge badge-accent">Active</span>
+          </div>
+        </div>
+
+        <div class="memory-card" style="display:flex;align-items:center;justify-content:center;border-style:dashed;min-height:160px;background:var(--bg-card);">
+          <button class="btn btn-ghost btn-sm" id="emptyAddProjectBtn">+ Add your next project</button>
+        </div>
+      </div>
+
+      <div class="card mt-24" id="addProjectForm" style="display:none; max-width:520px;">
+        <div class="card-title">Add a Project</div>
+        <div class="card-sub">This gets stored as durable memory the agent can reason over</div>
+        <div class="field">
+          <label for="projTitle">Project title</label>
+          <input type="text" id="projTitle" placeholder="e.g. Full-Stack E-Commerce Platform">
+        </div>
+        <div class="field">
+          <label for="projStack">Primary tool / skill</label>
+          <input type="text" id="projStack" placeholder="e.g. JavaScript / Node.js">
+        </div>
+        <div class="field">
+          <label for="projDesc">Short description</label>
+          <textarea id="projDesc" rows="3" placeholder="What did you build?"></textarea>
+        </div>
+        <div class="flex gap-12">
+          <button class="btn btn-primary btn-sm" id="saveProjectBtn">Save Project</button>
+          <button class="btn btn-ghost btn-sm" id="cancelProjectBtn">Cancel</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/projects.js"></script>
+  <script src="../componets/navbar/navbar.js"></script>
+  <script src="../componets/sidebar/sidebar.js"></script>
+</body>
+</html>

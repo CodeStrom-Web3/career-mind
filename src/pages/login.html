@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="landing.html" class="brand"><span class="brand-mark">C</span> CareerMind AI</a>
+    <div class="flex gap-12 items-center">
+      <a href="landing.html" class="btn btn-ghost btn-sm">← Back to Landing Page</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Create account</a>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <form class="auth-card" id="loginForm" novalidate>
+      <div class="flex justify-between items-center mb-12">
+        <span class="eyebrow">Welcome back</span>
+        <a href="landing.html" class="text-accent" style="font-size: 0.8rem; text-decoration: none;">← Back to Home</a>
+      </div>
+      <h1 class="mt-8 mb-24" style="font-size:1.6rem;">Log in to your memory</h1>
+
+      <div class="field" id="emailField">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        <div class="field-error">Enter a valid email address.</div>
+      </div>
+
+      <div class="field" id="passwordField">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password">
+        <div class="field-error">Password is required.</div>
+      </div>
+
+      <div class="flex justify-between items-center mb-16" style="font-size:0.82rem;">
+        <label class="flex items-center gap-8 text-dim"><input type="checkbox" style="width:auto;"> Remember me</label>
+        <a href="#" class="text-accent">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Log in</button>
+
+      <p class="form-footnote">New to CareerMind? <a href="register.html">Create an account</a></p>
+    </form>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>

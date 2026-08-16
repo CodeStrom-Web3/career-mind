@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Center · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../componets/navbar/navbar.css">
+<link rel="stylesheet" href="../componets/sidebar/sidebar.css">
+<link rel="stylesheet" href="../componets/memory/memory.css">
+</head>
+<body>
+
+  <!-- NAVBAR COMPONENT -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="dashboard.html" class="brand-link">
+        <div class="brand-icon">✦</div>
+        <div class="brand-name">CareerMind <span>AI</span></div>
+      </a>
+    </div>
+    <div class="navbar-actions">
+      <button class="notification-button" id="notificationBtn" type="button" aria-label="Notifications">
+        <span class="notification-icon">🔔</span>
+        <span class="notification-badge" id="notificationBadge">2</span>
+      </button>
+      <div class="profile-container">
+        <button class="navbar-profile" id="profileDropdownBtn" type="button" aria-label="Open profile menu" aria-expanded="false">
+          <div class="profile-avatar">DF</div>
+          <div class="profile-info">
+            <span class="profile-name">Dipanshu Fulzele</span>
+            <span class="profile-role">Web Developer</span>
+          </div>
+          <span class="profile-arrow" id="profileArrow">⌄</span>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <a href="career-profile.html" class="profile-menu-item">
+            <span>👤</span><span>My Profile</span>
+          </a>
+          <a href="memory-center.html" class="profile-menu-item">
+            <span>🧠</span><span>My Memory</span>
+          </a>
+          <a href="career-assistant.html" class="profile-menu-item">
+            <span>✦</span><span>AI Assistant</span>
+          </a>
+          <div class="profile-menu-divider"></div>
+          <button class="profile-menu-item logout-item" id="logoutBtn" type="button">
+            <span>🚪</span><span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- APP SHELL & SIDEBAR -->
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-section-title">MAIN</span>
+      </div>
+      <nav class="sidebar-navigation">
+        <a href="dashboard.html" class="sidebar-item" data-page="dashboard">
+          <span class="sidebar-icon">▦</span>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+        <a href="career-profile.html" class="sidebar-item" data-page="career-profile">
+          <span class="sidebar-icon">◎</span>
+          <span class="sidebar-text">Career Profile</span>
+        </a>
+        <a href="career-assistant.html" class="sidebar-item" data-page="career-assistant">
+          <span class="sidebar-icon">✦</span>
+          <span class="sidebar-text">AI Assistant</span>
+        </a>
+        <a href="roadmap.html" class="sidebar-item" data-page="roadmap">
+          <span class="sidebar-icon">◈</span>
+          <span class="sidebar-text">Career Roadmap</span>
+        </a>
+      </nav>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">CAREER MEMORY</span>
+        <a href="memory-center.html" class="sidebar-item active" data-page="memory-center">
+          <span class="sidebar-icon">🧠</span>
+          <span class="sidebar-text">Memory Center</span>
+        </a>
+        <a href="projects.html" class="sidebar-item" data-page="projects">
+          <span class="sidebar-icon">◇</span>
+          <span class="sidebar-text">Projects</span>
+        </a>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <div class="help-content">
+            <strong>Need help?</strong>
+            <span>Ask CareerMind AI</span>
+          </div>
+        </div>
+        <button class="sidebar-collapse" id="sidebarCollapse" type="button" aria-label="Collapse sidebar">
+          <span>«</span>
+          <span class="collapse-text">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+
+      <div class="page-head flex justify-between items-center mb-24">
+        <div>
+          <span class="eyebrow">Capture → Store → Retrieve → Use → Update</span>
+          <h1>Memory Center</h1>
+          <p>Every memory CareerMind holds about you, searchable by vector similarity and category.</p>
+        </div>
+        <span class="memory-count" id="memoryCount">4 Memories</span>
+      </div>
+
+      <div class="flex justify-between items-center mb-24 gap-16" style="flex-wrap: wrap;">
+        <div class="field" style="max-width:340px; margin-bottom:0; flex:1;">
+          <input type="text" id="memorySearch" placeholder="Search your memories… e.g. 'Frontend'">
+        </div>
+        <div class="tabs" style="border-bottom:none; margin-bottom:0;">
+          <div class="tab active" data-filter="all">All</div>
+          <div class="tab" data-filter="skill">Skills</div>
+          <div class="tab" data-filter="course">Courses</div>
+          <div class="tab" data-filter="project">Projects</div>
+          <div class="tab" data-filter="gap">Gaps</div>
+        </div>
+      </div>
+
+      <!-- MEMORY CONTAINER FOR DYNAMIC COMPONENT POPULATION -->
+      <div class="memory-grid" id="memoryContainer">
+        <!-- Dynamically rendered by memory.js -->
+      </div>
+
+      <p class="text-dim mt-24" id="noResults" style="display:none; text-align:center;">No memories match your search.</p>
+
+    </main>
+  </div>
+
+  <!-- MEMORY DETAILS POPUP MODAL -->
+  <section class="memory-details-page" id="memoryDetailsPage">
+    <div class="memory-details-container">
+      <button class="back-button" id="backButton" type="button">← Back to Memory Center</button>
+      
+      <div class="memory-details-heading">
+        <div class="memory-large-icon">🧠</div>
+        <div>
+          <span class="details-category" id="detailsCategory">CAREER GOAL</span>
+          <h2 class="details-title" id="detailsTitle">Career Direction</h2>
+        </div>
+      </div>
+
+      <div class="memory-analysis-card">
+        <div class="analysis-header flex justify-between items-center">
+          <div>
+            <h3>Memory Importance Analysis</h3>
+            <p>Graphical vector strength analysis of this memory</p>
+          </div>
+          <strong class="analysis-score" id="analysisScore">85%</strong>
+        </div>
+
+        <div class="graph-section">
+          <div class="circle-container">
+            <div class="memory-circle" id="memoryCircle">
+              <div class="circle-content">
+                <strong id="circlePercentage">85%</strong>
+                <span>Importance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison-section">
+            <div class="comparison-row">
+              <div class="comparison-heading">
+                <span>Importance</span>
+                <strong id="importanceValue">85%</strong>
+              </div>
+              <div class="comparison-bar">
+                <div class="comparison-fill importance-fill" id="importanceBar"></div>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-heading">
+                <span>Memory Strength</span>
+                <strong id="strengthValue">75%</strong>
+              </div>
+              <div class="comparison-bar">
+                <div class="comparison-fill strength-fill" id="strengthBar"></div>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-heading">
+                <span>Relevance</span>
+                <strong id="relevanceValue">90%</strong>
+              </div>
+              <div class="comparison-bar">
+                <div class="comparison-fill relevance-fill" id="relevanceBar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="memory-information">
+        <div class="information-row">
+          <span>Type</span>
+          <strong id="detailsType">Career Goal</strong>
+        </div>
+        <div class="information-divider"></div>
+        <div class="information-row">
+          <span>Updated</span>
+          <strong id="detailsUpdated">Recently</strong>
+        </div>
+        <div class="information-divider"></div>
+        <div class="memory-description-box">
+          <span>Remembered Information</span>
+          <p id="detailsContent">Working toward building a strong career in software development and improving practical technical skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/memory-center.js"></script>
+  <script src="../componets/navbar/navbar.js"></script>
+  <script src="../componets/sidebar/sidebar.js"></script>
+  <script src="../componets/memory/memory.js"></script>
+</body>
+</html>

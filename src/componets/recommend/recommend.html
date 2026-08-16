@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerMind AI - Recommendations</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="recommend.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         RECOMMENDATION PAGE
+    =========================================== -->
+
+    <main
+        class="recommendation-page"
+        id="recommendationPage">
+
+        <section class="recommendation-section">
+
+            <!-- Header -->
+
+            <div class="recommendation-header">
+
+                <div>
+
+                    <span class="recommendation-eyebrow">
+                        AI CAREER GUIDANCE
+                    </span>
+
+                    <h1 class="recommendation-title">
+                        Recommendations
+                    </h1>
+
+                    <p class="recommendation-description">
+                        Personalized suggestions to help
+                        you improve your career development.
+                    </p>
+
+                </div>
+
+                <span
+                    class="recommendation-count"
+                    id="recommendationCount">
+                    0 Recommendations
+                </span>
+
+            </div>
+
+
+            <!-- Recommendation Cards -->
+
+            <div
+                class="recommendation-grid"
+                id="recommendationContainer">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         RECOMMENDATION DETAILS
+    =========================================== -->
+
+    <section
+        class="recommendation-details-page"
+        id="recommendationDetailsPage">
+
+        <div class="recommendation-details-container">
+
+
+            <!-- Back Button -->
+
+            <button
+                class="back-button"
+                id="backButton"
+                type="button">
+
+                ← Back to Recommendations
+
+            </button>
+
+
+            <!-- Details Header -->
+
+            <div class="details-heading">
+
+                <div
+                    class="details-icon"
+                    id="detailsIcon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <span
+                        class="details-category"
+                        id="detailsCategory">
+                        TECHNICAL SKILL
+                    </span>
+
+                    <h2
+                        class="details-title"
+                        id="detailsTitle">
+                        Improve JavaScript Skills
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 MATCH ANALYSIS
+            ======================================= -->
+
+            <div class="match-card">
+
+                <div class="match-header">
+
+                    <div>
+
+                        <span class="match-label">
+                            RECOMMENDATION MATCH
+                        </span>
+
+                        <h3>
+                            Why this is recommended
+                        </h3>
+
+                    </div>
+
+                    <strong
+                        id="matchScore">
+                        88%
+                    </strong>
+
+                </div>
+
+
+                <!-- Match Graph -->
+
+                <div class="match-graph">
+
+                    <div
+                        class="match-circle"
+                        id="matchCircle">
+
+                        <div class="match-circle-center">
+
+                            <strong
+                                id="circleScore">
+                                88%
+                            </strong>
+
+                            <span>
+                                Match
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="match-description">
+
+                        <p id="detailsReason">
+
+                            Your current skill profile indicates
+                            that strengthening JavaScript will
+                            improve your frontend development
+                            capabilities.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 SUGGESTED ACTIONS
+            ======================================= -->
+
+            <div class="actions-card">
+
+                <div class="actions-header">
+
+                    <span class="actions-label">
+                        NEXT STEPS
+                    </span>
+
+                    <h3>
+                        Suggested Actions
+                    </h3>
+
+                </div>
+
+
+                <div
+                    class="actions-list"
+                    id="actionsList">
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 RECOMMENDATION INFORMATION
+            ======================================= -->
+
+            <div class="recommendation-info">
+
+                <div class="info-row">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong id="detailsType">
+                        Technical Skill
+                    </strong>
+
+                </div>
+
+
+                <div class="info-divider"></div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        Priority
+                    </span>
+
+                    <strong
+                        id="detailsPriority"
+                        class="priority-high">
+                        High
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="recommend.js"></script>
+
+</body>
+
+</html>
