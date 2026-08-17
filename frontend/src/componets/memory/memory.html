@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerMind AI - Memory Card</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="memory.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         MEMORY PAGE
+    =========================================== -->
+
+    <main
+        class="memory-page"
+        id="memoryPage">
+
+        <section class="memory-section">
+
+            <div class="memory-header">
+
+                <div>
+
+                    <span class="memory-eyebrow">
+                        CAREER MEMORY
+                    </span>
+
+                    <h1 class="memory-title">
+                        Your Memories
+                    </h1>
+
+                    <p class="memory-description">
+                        Important information remembered
+                        from your career journey.
+                    </p>
+
+                </div>
+
+                <span
+                    class="memory-count"
+                    id="memoryCount">
+                    0 Memories
+                </span>
+
+            </div>
+
+
+            <!-- Memory Cards -->
+
+            <div
+                class="memory-grid"
+                id="memoryContainer">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         MEMORY DETAILS PAGE
+    =========================================== -->
+
+    <section
+        class="memory-details-page"
+        id="memoryDetailsPage">
+
+        <div class="memory-details-container">
+
+
+            <!-- Back Button -->
+
+            <button
+                class="back-button"
+                id="backButton"
+                type="button">
+
+                ← Back to Memories
+
+            </button>
+
+
+            <!-- ======================================
+                 MEMORY TITLE
+            ======================================= -->
+
+            <div class="memory-details-heading">
+
+                <div class="memory-large-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <span
+                        class="details-category"
+                        id="detailsCategory">
+                        CAREER GOAL
+                    </span>
+
+                    <h2
+                        class="details-title"
+                        id="detailsTitle">
+                        Career Direction
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 GRAPHICAL ANALYSIS
+            ======================================= -->
+
+            <div class="memory-analysis-card">
+
+
+                <!-- Analysis Heading -->
+
+                <div class="analysis-header">
+
+                    <div>
+
+                        <h3>
+                            Memory Importance
+                        </h3>
+
+                        <p>
+                            Graphical analysis of
+                            this memory.
+                        </p>
+
+                    </div>
+
+                    <strong
+                        class="analysis-score"
+                        id="analysisScore">
+                        85%
+                    </strong>
+
+                </div>
+
+
+                <!-- ==================================
+                     GRAPH
+                =================================== -->
+
+                <div class="graph-section">
+
+
+                    <!-- Circular Graph -->
+
+                    <div class="circle-container">
+
+                        <div
+                            class="memory-circle"
+                            id="memoryCircle">
+
+                            <div class="circle-content">
+
+                                <strong
+                                    id="circlePercentage">
+                                    85%
+                                </strong>
+
+                                <span>
+                                    Importance
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================
+                         COMPARISON BARS
+                    =================================== -->
+
+                    <div class="comparison-section">
+
+
+                        <!-- Importance -->
+
+                        <div class="comparison-row">
+
+                            <div class="comparison-heading">
+
+                                <span>
+                                    Importance
+                                </span>
+
+                                <strong
+                                    id="importanceValue">
+                                    85%
+                                </strong>
+
+                            </div>
+
+                            <div class="comparison-bar">
+
+                                <div
+                                    class="comparison-fill importance-fill"
+                                    id="importanceBar">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Memory Strength -->
+
+                        <div class="comparison-row">
+
+                            <div class="comparison-heading">
+
+                                <span>
+                                    Memory Strength
+                                </span>
+
+                                <strong
+                                    id="strengthValue">
+                                    75%
+                                </strong>
+
+                            </div>
+
+                            <div class="comparison-bar">
+
+                                <div
+                                    class="comparison-fill strength-fill"
+                                    id="strengthBar">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Relevance -->
+
+                        <div class="comparison-row">
+
+                            <div class="comparison-heading">
+
+                                <span>
+                                    Relevance
+                                </span>
+
+                                <strong
+                                    id="relevanceValue">
+                                    90%
+                                </strong>
+
+                            </div>
+
+                            <div class="comparison-bar">
+
+                                <div
+                                    class="comparison-fill relevance-fill"
+                                    id="relevanceBar">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ======================================
+                 MEMORY INFORMATION
+            ======================================= -->
+
+            <div class="memory-information">
+
+
+                <div class="information-row">
+
+                    <span>
+                        Type
+                    </span>
+
+                    <strong id="detailsType">
+                        Career Goal
+                    </strong>
+
+                </div>
+
+
+                <div class="information-divider"></div>
+
+
+                <div class="information-row">
+
+                    <span>
+                        Updated
+                    </span>
+
+                    <strong id="detailsUpdated">
+                        Recently
+                    </strong>
+
+                </div>
+
+
+                <div class="information-divider"></div>
+
+
+                <div class="memory-description-box">
+
+                    <span>
+                        Remembered Information
+                    </span>
+
+                    <p id="detailsContent">
+                        Working toward building a strong
+                        career in software development and
+                        improving practical technical skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="memory.js"></script>
+
+</body>
+
+</html>

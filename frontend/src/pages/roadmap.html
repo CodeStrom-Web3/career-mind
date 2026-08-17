@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../componets/navbar/navbar.css">
+<link rel="stylesheet" href="../componets/sidebar/sidebar.css">
+<link rel="stylesheet" href="../componets/recommend/recommend.css">
+</head>
+<body>
+
+  <!-- NAVBAR COMPONENT -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="dashboard.html" class="brand-link">
+        <div class="brand-icon">✦</div>
+        <div class="brand-name">CareerMind <span>AI</span></div>
+      </a>
+    </div>
+    <div class="navbar-actions">
+      <button class="notification-button" id="notificationBtn" type="button" aria-label="Notifications">
+        <span class="notification-icon">🔔</span>
+        <span class="notification-badge" id="notificationBadge">2</span>
+      </button>
+      <div class="profile-container">
+        <button class="navbar-profile" id="profileDropdownBtn" type="button" aria-label="Open profile menu" aria-expanded="false">
+          <div class="profile-avatar">DF</div>
+          <div class="profile-info">
+            <span class="profile-name">Dipanshu Fulzele</span>
+            <span class="profile-role">Web Developer</span>
+          </div>
+          <span class="profile-arrow" id="profileArrow">⌄</span>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <a href="career-profile.html" class="profile-menu-item">
+            <span>👤</span><span>My Profile</span>
+          </a>
+          <a href="memory-center.html" class="profile-menu-item">
+            <span>🧠</span><span>My Memory</span>
+          </a>
+          <a href="career-assistant.html" class="profile-menu-item">
+            <span>✦</span><span>AI Assistant</span>
+          </a>
+          <div class="profile-menu-divider"></div>
+          <button class="profile-menu-item logout-item" id="logoutBtn" type="button">
+            <span>🚪</span><span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- APP SHELL & SIDEBAR -->
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-section-title">MAIN</span>
+      </div>
+      <nav class="sidebar-navigation">
+        <a href="dashboard.html" class="sidebar-item" data-page="dashboard">
+          <span class="sidebar-icon">▦</span>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+        <a href="career-profile.html" class="sidebar-item" data-page="career-profile">
+          <span class="sidebar-icon">◎</span>
+          <span class="sidebar-text">Career Profile</span>
+        </a>
+        <a href="career-assistant.html" class="sidebar-item" data-page="career-assistant">
+          <span class="sidebar-icon">✦</span>
+          <span class="sidebar-text">AI Assistant</span>
+        </a>
+        <a href="roadmap.html" class="sidebar-item active" data-page="roadmap">
+          <span class="sidebar-icon">◈</span>
+          <span class="sidebar-text">Career Roadmap</span>
+        </a>
+      </nav>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">CAREER MEMORY</span>
+        <a href="memory-center.html" class="sidebar-item" data-page="memory-center">
+          <span class="sidebar-icon">🧠</span>
+          <span class="sidebar-text">Memory Center</span>
+        </a>
+        <a href="projects.html" class="sidebar-item" data-page="projects">
+          <span class="sidebar-icon">◇</span>
+          <span class="sidebar-text">Projects</span>
+        </a>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <div class="help-content">
+            <strong>Need help?</strong>
+            <span>Ask CareerMind AI</span>
+          </div>
+        </div>
+        <button class="sidebar-collapse" id="sidebarCollapse" type="button" aria-label="Collapse sidebar">
+          <span>«</span>
+          <span class="collapse-text">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+
+      <div class="page-head">
+        <span class="eyebrow">Personalised, not generic</span>
+        <h1>Your Roadmap to Web Developer</h1>
+        <p>Generated from your stored goal, skills and gaps — updates automatically as your memory grows.</p>
+      </div>
+
+      <!-- ROADMAP TIMELINE THREAD -->
+      <div class="card mb-24">
+        <div class="thread">
+          <div class="thread-item done">
+            <div class="thread-date">Stage 01 · Completed</div>
+            <h4>HTML5 &amp; Modern CSS Layouts</h4>
+            <p>Marked complete after building responsive layouts and design tokens.</p>
+          </div>
+
+          <div class="thread-item done">
+            <div class="thread-date">Stage 02 · Completed</div>
+            <h4>Core JavaScript (ES6+)</h4>
+            <p>Completed DOM manipulation and event handlers.</p>
+          </div>
+
+          <div class="thread-item">
+            <div class="thread-date">Stage 03 · In progress</div>
+            <h4>Asynchronous JS &amp; API Integration</h4>
+            <p>Identified as your current gap — Fetch API, JSON parsing, async/await pattern.</p>
+          </div>
+
+          <div class="thread-item">
+            <div class="thread-date">Stage 04 · Up next</div>
+            <h4>State Management &amp; Modular Architecture</h4>
+            <p>Builds directly on JS fundamentals to design scalable application states.</p>
+          </div>
+
+          <div class="thread-item">
+            <div class="thread-date">Stage 05 · Upcoming</div>
+            <h4>Full-Stack Capstone Project</h4>
+            <p>End-to-end web app connecting custom backend REST APIs to database storage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2 mb-24">
+        <div class="card">
+          <div class="card-title">Overall Roadmap Progress</div>
+          <div class="card-sub">2 of 5 stages complete</div>
+          <div class="progress"><span style="width:40%;"></span></div>
+        </div>
+        <div class="card">
+          <div class="card-title">Why this sequence?</div>
+          <p class="text-dim">CareerMind sequenced API Integration before state management because your memory shows high proficiency in DOM manipulation — the agent reasons over dependencies, not a rigid generic checklist.</p>
+        </div>
+      </div>
+
+      <!-- AI RECOMMENDATIONS COMPONENT CONTAINER -->
+      <div class="card">
+        <div class="card-title mb-16">Recommended Actions &amp; Milestones</div>
+        <div class="recommendation-grid" id="recommendationContainer">
+          <!-- Populated by recommend.js -->
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- RECOMMENDATION DETAILS POPUP MODAL -->
+  <section class="recommendation-details-page" id="recommendationDetailsPage">
+    <div class="recommendation-details-container">
+      <button class="back-button" id="backButton" type="button">← Back to Roadmap</button>
+      <div class="details-heading">
+        <div class="details-icon" id="detailsIcon">🎯</div>
+        <div>
+          <span class="details-category" id="detailsCategory">TECHNICAL SKILL</span>
+          <h2 class="details-title" id="detailsTitle">Recommendation Title</h2>
+        </div>
+      </div>
+      <div class="match-card">
+        <div class="match-header">
+          <div>
+            <span class="match-label">RECOMMENDATION MATCH</span>
+            <h3>Why this is recommended</h3>
+          </div>
+          <strong id="matchScore">88%</strong>
+        </div>
+        <div class="match-graph">
+          <div class="match-circle" id="matchCircle">
+            <div class="match-circle-center">
+              <strong id="circleScore">88%</strong>
+              <span>Match</span>
+            </div>
+          </div>
+          <div class="match-description">
+            <p id="detailsReason">Reason description goes here...</p>
+          </div>
+        </div>
+      </div>
+      <div class="actions-card">
+        <div class="actions-header">
+          <span class="actions-label">NEXT STEPS</span>
+          <h3>Suggested Actions</h3>
+        </div>
+        <div class="actions-list" id="actionsList"></div>
+      </div>
+      <div class="recommendation-info">
+        <div class="info-row">
+          <span>Category</span>
+          <strong id="detailsType">Technical Skill</strong>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-row">
+          <span>Priority</span>
+          <strong id="detailsPriority" class="priority-high">High</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../componets/navbar/navbar.js"></script>
+  <script src="../componets/sidebar/sidebar.js"></script>
+  <script src="../componets/recommend/recommend.js"></script>
+</body>
+</html>

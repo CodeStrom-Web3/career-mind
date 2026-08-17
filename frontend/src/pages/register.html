@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="landing.html" class="brand"><span class="brand-mark">C</span> CareerMind AI</a>
+    <div class="flex gap-12 items-center">
+      <a href="landing.html" class="btn btn-ghost btn-sm">← Back to Landing Page</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Log in</a>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <form class="auth-card" id="registerForm" novalidate>
+      <div class="flex justify-between items-center mb-12">
+        <span class="eyebrow">Start remembering</span>
+        <a href="landing.html" class="text-accent" style="font-size: 0.8rem; text-decoration: none;">← Back to Home</a>
+      </div>
+      <h1 class="mt-8 mb-24" style="font-size:1.6rem;">Create your account</h1>
+
+      <div class="field" id="nameField">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Riya Sharma" autocomplete="name">
+        <div class="field-error">Please enter your name.</div>
+      </div>
+
+      <div class="field" id="emailField">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+        <div class="field-error">Enter a valid email address.</div>
+      </div>
+
+      <div class="field" id="passwordField">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password">
+        <div class="field-error">Password must be at least 8 characters.</div>
+      </div>
+
+      <div class="field" id="goalField">
+        <label for="goal">What's your career goal? <span class="text-faint">(optional — helps seed your memory)</span></label>
+        <input type="text" id="goal" name="goal" placeholder="e.g. Become a Data Analyst">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Create account</button>
+
+      <p class="form-footnote">Already have an account? <a href="login.html">Log in</a></p>
+    </form>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>

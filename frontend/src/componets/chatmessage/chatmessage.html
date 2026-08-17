@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerMind AI - Career Assistant</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="chatmessage.css">
+</head>
+
+<body>
+
+    <!-- ==================================================
+         CHAT PAGE
+    ================================================== -->
+
+    <main class="chat-page">
+
+        <section class="chat-container">
+
+            <!-- ==================================================
+                 CHAT HEADER
+            ================================================== -->
+
+            <header class="chat-header">
+
+                <div class="chat-profile">
+
+                    <div class="ai-avatar">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h1>
+                            CareerMind AI
+                        </h1>
+
+                        <div class="online-status">
+
+                            <span class="status-dot"></span>
+
+                            AI Career Assistant
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="clear-chat-button"
+                    id="clearChatButton"
+                    type="button">
+
+                    Clear Chat
+
+                </button>
+
+            </header>
+
+
+            <!-- ==================================================
+                 CHAT MESSAGES
+            ================================================== -->
+
+            <div
+                class="chat-messages"
+                id="chatMessages"
+                aria-live="polite">
+
+
+                <!-- AI Welcome Message -->
+
+                <div class="message-row ai-row">
+
+                    <div class="message-avatar">
+                        🧠
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-info">
+
+                            <strong>
+                                CareerMind AI
+                            </strong>
+
+                            <span>
+                                Just now
+                            </span>
+
+                        </div>
+
+                        <div class="message-bubble ai-bubble">
+
+                            <p>
+                                Hello! 👋 I'm your CareerMind
+                                AI assistant. I can help you
+                                understand your skills, career
+                                progress and learning goals.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Example User Message -->
+
+                <div class="message-row user-row">
+
+                    <div class="message-content">
+
+                        <div class="message-info user-info">
+
+                            <span>
+                                Just now
+                            </span>
+
+                            <strong>
+                                You
+                            </strong>
+
+                        </div>
+
+                        <div class="message-bubble user-bubble">
+
+                            <p>
+                                What should I learn next?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Example AI Response -->
+
+                <div class="message-row ai-row">
+
+                    <div class="message-avatar">
+                        🧠
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-info">
+
+                            <strong>
+                                CareerMind AI
+                            </strong>
+
+                            <span>
+                                Just now
+                            </span>
+
+                        </div>
+
+                        <div class="message-bubble ai-bubble">
+
+                            <p>
+                                Based on your current career
+                                development, strengthening
+                                JavaScript and building
+                                practical projects would be
+                                a good next step. 🚀
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 TYPING INDICATOR
+            ================================================== -->
+
+            <div
+                class="typing-container"
+                id="typingContainer">
+
+                <div class="message-avatar">
+                    🧠
+                </div>
+
+                <div class="typing-bubble">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 CHAT INPUT
+            ================================================== -->
+
+            <div class="chat-input-section">
+
+                <div class="chat-input-wrapper">
+
+                    <textarea
+                        id="chatInput"
+                        class="chat-input"
+                        rows="1"
+                        placeholder="Ask CareerMind AI about your career..."
+                        aria-label="Message CareerMind AI">
+                    </textarea>
+
+
+                    <button
+                        class="send-button"
+                        id="sendButton"
+                        type="button"
+                        aria-label="Send message">
+
+                        <span>
+                            ➤
+                        </span>
+
+                    </button>
+
+                </div>
+
+                <p class="input-hint">
+                    Press Enter to send • Shift + Enter for a new line
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="chatmessage.js"></script>
+
+</body>
+
+</html>
