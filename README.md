@@ -315,3 +315,4 @@ docker run -p 8000:8000 --env-file .env careermind-api
 - **JWT Protection:** State is securely authenticated via Bearer tokens stored in browser memory/local storage and validated on every API call.
 - **Zero Raw Secrets:** Database credentials and AWS keys reside exclusively in backend environment variables.
 - **CORS Protection:** Configured to permit explicit frontend dev & production origins.
+career mind

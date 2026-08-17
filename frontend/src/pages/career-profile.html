@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Profile · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../componets/navbar/navbar.css">
+<link rel="stylesheet" href="../componets/sidebar/sidebar.css">
+<link rel="stylesheet" href="../componets/skillcard/skillcard.css">
+<link rel="stylesheet" href="../componets/memory/memory.css">
+<link rel="stylesheet" href="../componets/career/career.css">
+</head>
+<body>
+
+  <!-- NAVBAR COMPONENT -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="dashboard.html" class="brand-link">
+        <div class="brand-icon">✦</div>
+        <div class="brand-name">CareerMind <span>AI</span></div>
+      </a>
+    </div>
+    <div class="navbar-actions">
+      <button class="notification-button" id="notificationBtn" type="button" aria-label="Notifications">
+        <span class="notification-icon">🔔</span>
+        <span class="notification-badge" id="notificationBadge">2</span>
+      </button>
+      <div class="profile-container">
+        <button class="navbar-profile" id="profileDropdownBtn" type="button" aria-label="Open profile menu" aria-expanded="false">
+          <div class="profile-avatar">DF</div>
+          <div class="profile-info">
+            <span class="profile-name">Dipanshu Fulzele</span>
+            <span class="profile-role">Web Developer</span>
+          </div>
+          <span class="profile-arrow" id="profileArrow">⌄</span>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <a href="career-profile.html" class="profile-menu-item">
+            <span>👤</span><span>My Profile</span>
+          </a>
+          <a href="memory-center.html" class="profile-menu-item">
+            <span>🧠</span><span>My Memory</span>
+          </a>
+          <a href="career-assistant.html" class="profile-menu-item">
+            <span>✦</span><span>AI Assistant</span>
+          </a>
+          <div class="profile-menu-divider"></div>
+          <button class="profile-menu-item logout-item" id="logoutBtn" type="button">
+            <span>🚪</span><span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- APP SHELL & SIDEBAR -->
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-section-title">MAIN</span>
+      </div>
+      <nav class="sidebar-navigation">
+        <a href="dashboard.html" class="sidebar-item" data-page="dashboard">
+          <span class="sidebar-icon">▦</span>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+        <a href="career-profile.html" class="sidebar-item active" data-page="career-profile">
+          <span class="sidebar-icon">◎</span>
+          <span class="sidebar-text">Career Profile</span>
+        </a>
+        <a href="career-assistant.html" class="sidebar-item" data-page="career-assistant">
+          <span class="sidebar-icon">✦</span>
+          <span class="sidebar-text">AI Assistant</span>
+        </a>
+        <a href="roadmap.html" class="sidebar-item" data-page="roadmap">
+          <span class="sidebar-icon">◈</span>
+          <span class="sidebar-text">Career Roadmap</span>
+        </a>
+      </nav>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">CAREER MEMORY</span>
+        <a href="memory-center.html" class="sidebar-item" data-page="memory-center">
+          <span class="sidebar-icon">🧠</span>
+          <span class="sidebar-text">Memory Center</span>
+        </a>
+        <a href="projects.html" class="sidebar-item" data-page="projects">
+          <span class="sidebar-icon">◇</span>
+          <span class="sidebar-text">Projects</span>
+        </a>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <div class="help-content">
+            <strong>Need help?</strong>
+            <span>Ask CareerMind AI</span>
+          </div>
+        </div>
+        <button class="sidebar-collapse" id="sidebarCollapse" type="button" aria-label="Collapse sidebar">
+          <span>«</span>
+          <span class="collapse-text">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+
+      <div class="page-head">
+        <span class="eyebrow">Your memory, editable</span>
+        <h1>Career Profile</h1>
+        <p>This is the core context CareerMind stores and reasons over every time you interact with the agent.</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" data-tab="goal">Goal</div>
+        <div class="tab" data-tab="skills">Skills</div>
+        <div class="tab" data-tab="progress">Progress Breakdown</div>
+        <div class="tab" data-tab="courses">Courses</div>
+        <div class="tab" data-tab="gaps">Gaps &amp; Preferences</div>
+      </div>
+
+      <!-- TAB 1: GOAL -->
+      <div id="tab-goal" class="tab-panel">
+        <div class="card mb-24">
+          <div class="card-title">Career Goal</div>
+          <div class="card-sub">The anchor for every recommendation generated by CareerMind AI</div>
+          <div class="field" style="max-width:420px;">
+            <label for="goalInput">Aspiring to be a</label>
+            <input type="text" id="goalInput" value="Web Developer">
+          </div>
+          <button class="btn btn-primary btn-sm" id="saveGoalBtn">Save Goal</button>
+        </div>
+      </div>
+
+      <!-- TAB 2: SKILLS COMPONENT -->
+      <div id="tab-skills" class="tab-panel" style="display:none;">
+        <div class="skills-grid" id="skillsContainer">
+          <!-- Dynamically loaded by skillcard.js -->
+        </div>
+      </div>
+
+      <!-- TAB 3: CAREER PROGRESS BREAKDOWN COMPONENT -->
+      <div id="tab-progress" class="tab-panel" style="display:none;">
+        <div class="progress-breakdown-card">
+          <div class="breakdown-header">
+            <h3>Progress Breakdown</h3>
+            <p>Compare your development across technical and practical areas</p>
+          </div>
+          <div class="progress-item">
+            <div class="progress-item-header">
+              <div><span class="progress-icon">💻</span><strong>Skills</strong></div>
+              <span id="skillsPercentage">80%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill skills-fill" id="skillsBar"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-item-header">
+              <div><span class="progress-icon">🚀</span><strong>Projects</strong></div>
+              <span id="projectsPercentage">70%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill projects-fill" id="projectsBar"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-item-header">
+              <div><span class="progress-icon">📚</span><strong>Learning</strong></div>
+              <span id="learningPercentage">75%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill learning-fill" id="learningBar"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-item-header">
+              <div><span class="progress-icon">🎯</span><strong>Career Readiness</strong></div>
+              <span id="readinessPercentage">65%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill readiness-fill" id="readinessBar"></div></div>
+          </div>
+        </div>
+
+        <div class="career-insight-card mt-24" id="careerInsightCard">
+          <div class="insight-main">
+            <div class="insight-icon-large">💡</div>
+            <div class="insight-content">
+              <span class="insight-label">AI CAREER INSIGHT</span>
+              <h3>Your Career Development Summary</h3>
+              <p id="progressInsight">You are making steady progress. Continue improving technical skills and shipping practical projects.</p>
+            </div>
+            <button class="insight-button" id="insightButton" type="button">View Analysis <span>→</span></button>
+          </div>
+          <div class="insight-analysis" id="insightAnalysis" aria-hidden="true">
+            <div class="analysis-divider"></div>
+            <div class="analysis-grid">
+              <div class="analysis-item">
+                <span class="analysis-icon">💻</span>
+                <div><strong>Skills</strong><p id="insightSkills">Strong technical foundation in Web Development</p></div>
+              </div>
+              <div class="analysis-item">
+                <span class="analysis-icon">🚀</span>
+                <div><strong>Projects</strong><p id="insightProjects">Building component libraries &amp; full stack apps</p></div>
+              </div>
+              <div class="analysis-item">
+                <span class="analysis-icon">📚</span>
+                <div><strong>Learning</strong><p id="insightLearning">Maintain consistent daily learning goals</p></div>
+              </div>
+              <div class="analysis-item">
+                <span class="analysis-icon">🎯</span>
+                <div><strong>Readiness</strong><p id="insightReadiness">Focus on end-to-end practical experience</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: COURSES -->
+      <div id="tab-courses" class="tab-panel" style="display:none;">
+        <div class="grid-2">
+          <div class="memory-card">
+            <div class="memory-card-header">
+              <div class="memory-icon">📚</div>
+              <div class="memory-card-heading">
+                <span class="memory-category">COMPLETED COURSE</span>
+                <h4 class="memory-card-title">Frontend Component Architecture</h4>
+              </div>
+            </div>
+            <p class="memory-card-content">Mastered modular HTML5, CSS3, and ES6+ JS component design.</p>
+            <div class="memory-card-footer">
+              <span class="memory-updated">Completed 3 weeks ago</span>
+              <span class="badge badge-accent">Verified</span>
+            </div>
+          </div>
+          <div class="memory-card">
+            <div class="memory-card-header">
+              <div class="memory-icon">⚙️</div>
+              <div class="memory-card-heading">
+                <span class="memory-category">IN PROGRESS</span>
+                <h4 class="memory-card-title">JavaScript Async &amp; API Integration</h4>
+              </div>
+            </div>
+            <p class="memory-card-content">Module 4 of 6 complete — practicing fetch, promises, and async/await.</p>
+            <div class="memory-card-footer">
+              <span class="memory-updated">Active 2 days ago</span>
+              <span class="badge badge-warm">66% Complete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: GAPS & PREFERENCES -->
+      <div id="tab-gaps" class="tab-panel" style="display:none;">
+        <div class="card">
+          <div class="card-title">Identified Gaps &amp; Preferences</div>
+          <div class="card-sub">Key insights mined from conversation history</div>
+          <div class="flex" style="flex-direction:column;gap:12px;">
+            <div class="memory-card">
+              <span class="badge badge-danger">Gap Identified</span>
+              <h4 class="mt-8">State Management &amp; Backend API Integration</h4>
+              <p class="text-dim">Flagged as next milestone for full Web Developer readiness.</p>
+            </div>
+            <div class="memory-card">
+              <span class="badge badge-warm">Learner Preference</span>
+              <h4 class="mt-8">Project-Based Learning</h4>
+              <p class="text-dim">Prefers hands-on project creation over long video lectures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- SKILL DETAILS POPUP MODAL -->
+  <section class="skill-details-page" id="skillDetailsPage" aria-hidden="true">
+    <div class="details-container">
+      <button class="back-button" id="backButton" type="button">← Back to Profile</button>
+      <div class="details-header">
+        <div>
+          <span class="details-eyebrow">SKILL ANALYSIS</span>
+          <h2 class="details-title" id="detailsSkillName">Skill</h2>
+          <p class="details-description" id="detailsDescription">Skill proficiency analysis</p>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header flex justify-between items-center">
+          <div>
+            <h3>Proficiency Analysis</h3>
+            <p>Current proficiency vs remaining skill gap</p>
+          </div>
+          <span class="chart-percentage" id="chartPercentage">0%</span>
+        </div>
+        <div class="chart-area">
+          <div class="pie-chart-wrapper">
+            <div class="pie-chart" id="pieChart">
+              <div class="pie-center">
+                <strong id="piePercentage">0%</strong>
+                <span>Proficiency</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-dot proficiency-dot"></span>
+              <div><strong>Proficiency</strong>: <span id="legendProficiency">0%</span></div>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot remaining-dot"></span>
+              <div><strong>Remaining Gap</strong>: <span id="legendRemaining">0%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="details-grid">
+        <div class="detail-box">
+          <span>Current Level</span>
+          <strong id="detailsLevel">Beginner</strong>
+        </div>
+        <div class="detail-box">
+          <span>Proficiency</span>
+          <strong id="detailsProficiency">0%</strong>
+        </div>
+        <div class="detail-box">
+          <span>Skill Status</span>
+          <strong id="detailsStatus">Needs Improvement</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/profile.js"></script>
+  <script src="../componets/navbar/navbar.js"></script>
+  <script src="../componets/sidebar/sidebar.js"></script>
+  <script src="../componets/skillcard/skillcard.js"></script>
+  <script src="../componets/career/career.js"></script>
+</body>
+</html>

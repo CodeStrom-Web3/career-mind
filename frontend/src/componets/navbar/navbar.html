@@ -1,0 +1,68 @@
+<!--┌─────────────────────────────────────────┐
+│ ✦ CareerMind AI              🔔  DF Dipanshu Fulzele ⌄ │
+└─────────────────────────────────────────┘
+                                      ↓ CLICK
+                              ┌──────────────────┐
+                              │ 👤 My Profile    │
+                              │ 🧠 My Memory     │
+                              │ ✦ AI Assistant   │
+                              │ ──────────────── │
+                              │ 🚪 Logout        │
+                              └──────────────────┘
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar - CareerMind AI</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="../../pages/dashboard.html" class="brand-link">
+            <div class="brand-icon">✦</div>
+            <div class="brand-name">CareerMind <span>AI</span></div>
+        </a>
+    </div>
+
+    <div class="navbar-actions">
+        <button class="notification-button" id="notificationBtn" type="button" aria-label="Notifications">
+            <span class="notification-icon">🔔</span>
+            <span class="notification-badge" id="notificationBadge">2</span>
+        </button>
+
+        <div class="profile-container">
+            <button class="navbar-profile" id="profileDropdownBtn" type="button" aria-label="Open profile menu" aria-expanded="false">
+                <div class="profile-avatar">DF</div>
+                <div class="profile-info">
+                    <span class="profile-name">Dipanshu Fulzele</span>
+                    <span class="profile-role">Web Developer</span>
+                </div>
+                <span class="profile-arrow" id="profileArrow">⌄</span>
+            </button>
+
+            <div class="profile-menu" id="profileMenu">
+                <a href="../../pages/career-profile.html" class="profile-menu-item">
+                    <span>👤</span><span>My Profile</span>
+                </a>
+                <a href="../../pages/memory-center.html" class="profile-menu-item">
+                    <span>🧠</span><span>My Memory</span>
+                </a>
+                <a href="../../pages/career-assistant.html" class="profile-menu-item">
+                    <span>✦</span><span>AI Assistant</span>
+                </a>
+                <div class="profile-menu-divider"></div>
+                <button class="profile-menu-item logout-item" id="logoutBtn" type="button">
+                    <span>🚪</span><span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+<script src="navbar.js"></script>
+</body>
+</html>
