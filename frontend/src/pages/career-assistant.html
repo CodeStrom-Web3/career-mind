@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Assistant · CareerMind AI</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../componets/navbar/navbar.css">
+<link rel="stylesheet" href="../componets/sidebar/sidebar.css">
+<link rel="stylesheet" href="../componets/chatmessage/chatmessage.css">
+</head>
+<body>
+
+  <!-- NAVBAR COMPONENT -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="dashboard.html" class="brand-link">
+        <div class="brand-icon">✦</div>
+        <div class="brand-name">CareerMind <span>AI</span></div>
+      </a>
+    </div>
+    <div class="navbar-actions">
+      <button class="notification-button" id="notificationBtn" type="button" aria-label="Notifications">
+        <span class="notification-icon">🔔</span>
+        <span class="notification-badge" id="notificationBadge">2</span>
+      </button>
+      <div class="profile-container">
+        <button class="navbar-profile" id="profileDropdownBtn" type="button" aria-label="Open profile menu" aria-expanded="false">
+          <div class="profile-avatar">DF</div>
+          <div class="profile-info">
+            <span class="profile-name">Dipanshu Fulzele</span>
+            <span class="profile-role">Web Developer</span>
+          </div>
+          <span class="profile-arrow" id="profileArrow">⌄</span>
+        </button>
+        <div class="profile-menu" id="profileMenu">
+          <a href="career-profile.html" class="profile-menu-item">
+            <span>👤</span><span>My Profile</span>
+          </a>
+          <a href="memory-center.html" class="profile-menu-item">
+            <span>🧠</span><span>My Memory</span>
+          </a>
+          <a href="career-assistant.html" class="profile-menu-item">
+            <span>✦</span><span>AI Assistant</span>
+          </a>
+          <div class="profile-menu-divider"></div>
+          <button class="profile-menu-item logout-item" id="logoutBtn" type="button">
+            <span>🚪</span><span>Logout</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- APP SHELL & SIDEBAR -->
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-section-title">MAIN</span>
+      </div>
+      <nav class="sidebar-navigation">
+        <a href="dashboard.html" class="sidebar-item" data-page="dashboard">
+          <span class="sidebar-icon">▦</span>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+        <a href="career-profile.html" class="sidebar-item" data-page="career-profile">
+          <span class="sidebar-icon">◎</span>
+          <span class="sidebar-text">Career Profile</span>
+        </a>
+        <a href="career-assistant.html" class="sidebar-item active" data-page="career-assistant">
+          <span class="sidebar-icon">✦</span>
+          <span class="sidebar-text">AI Assistant</span>
+        </a>
+        <a href="roadmap.html" class="sidebar-item" data-page="roadmap">
+          <span class="sidebar-icon">◈</span>
+          <span class="sidebar-text">Career Roadmap</span>
+        </a>
+      </nav>
+      <div class="sidebar-section">
+        <span class="sidebar-section-title">CAREER MEMORY</span>
+        <a href="memory-center.html" class="sidebar-item" data-page="memory-center">
+          <span class="sidebar-icon">🧠</span>
+          <span class="sidebar-text">Memory Center</span>
+        </a>
+        <a href="projects.html" class="sidebar-item" data-page="projects">
+          <span class="sidebar-icon">◇</span>
+          <span class="sidebar-text">Projects</span>
+        </a>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <div class="help-content">
+            <strong>Need help?</strong>
+            <span>Ask CareerMind AI</span>
+          </div>
+        </div>
+        <button class="sidebar-collapse" id="sidebarCollapse" type="button" aria-label="Collapse sidebar">
+          <span>«</span>
+          <span class="collapse-text">Collapse</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="app-main">
+
+      <div class="page-head">
+        <span class="eyebrow">Remember → Retrieve → Reason → Respond</span>
+        <h1>Career Assistant</h1>
+        <p>Every answer below is grounded in memory retrieved from your profile and reasoning over your career goals.</p>
+      </div>
+
+      <!-- CHAT COMPONENT SHELL -->
+      <div class="chat-shell flex gap-24">
+        
+        <!-- MEMORY CONTEXT SIDE PANEL -->
+        <aside class="chat-mem-panel card" style="width: 260px; height: 720px; flex-shrink: 0;">
+          <span class="eyebrow">Active Context</span>
+          <h3 class="mt-4 mb-16" style="font-size: 1.1rem;">Memory Used</h3>
+          
+          <div class="flex" style="flex-direction: column; gap: 12px;">
+            <div class="memory-card" style="padding: 12px;">
+              <span class="tag" style="color:var(--accent); font-size: 10px;">Goal Anchor</span>
+              <h4 style="font-size: 13px; margin-top: 4px;">Web Developer</h4>
+            </div>
+            <div class="memory-card" style="padding: 12px;">
+              <span class="tag" style="color:var(--accent); font-size: 10px;">Active Skills</span>
+              <h4 style="font-size: 13px; margin-top: 4px;">HTML, CSS, JS, Java, C++</h4>
+            </div>
+            <div class="memory-card" style="padding: 12px;">
+              <span class="tag" style="color:var(--warm); font-size: 10px;">Gap Flagged</span>
+              <h4 style="font-size: 13px; margin-top: 4px;">State &amp; API Integration</h4>
+            </div>
+            <div class="memory-card" style="padding: 12px;">
+              <span class="tag" style="color:var(--accent); font-size: 10px;">Shipped Project</span>
+              <h4 style="font-size: 13px; margin-top: 4px;">Frontend Component Suite</h4>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CHAT MESSAGE COMPONENT -->
+        <section class="chat-container" style="flex: 1;">
+          <header class="chat-header">
+            <div class="chat-profile">
+              <div class="ai-avatar">🧠</div>
+              <div>
+                <h1>CareerMind AI</h1>
+                <div class="online-status">
+                  <span class="status-dot"></span>
+                  AI Career Assistant • Active Memory
+                </div>
+              </div>
+            </div>
+            <button class="clear-chat-button" id="clearChatButton" type="button">Clear Chat</button>
+          </header>
+
+          <div class="chat-messages" id="chatMessages" aria-live="polite">
+            <div class="message-row ai-row">
+              <div class="message-avatar">🧠</div>
+              <div class="message-content">
+                <div class="message-info">
+                  <strong>CareerMind AI</strong>
+                  <span>Just now</span>
+                </div>
+                <div class="message-bubble ai-bubble">
+                  <p>Hello Dipanshu! 👋 I remember you are working toward becoming a <strong>Web Developer</strong> and currently have active skills in HTML, CSS, JavaScript, Java, and C++. How can I help guide your next career step today?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="typing-container" id="typingContainer">
+            <div class="message-avatar">🧠</div>
+            <div class="typing-bubble">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="chat-input-section">
+            <div class="chat-input-wrapper">
+              <textarea id="chatInput" class="chat-input" rows="1" placeholder="Ask CareerMind AI about your career path..." aria-label="Message CareerMind AI"></textarea>
+              <button class="send-button" id="sendButton" type="button" aria-label="Send message">
+                <span>➤</span>
+              </button>
+            </div>
+            <p class="input-hint">Press Enter to send • Shift + Enter for a new line</p>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../componets/navbar/navbar.js"></script>
+  <script src="../componets/sidebar/sidebar.js"></script>
+  <script src="../componets/chatmessage/chatmessage.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+/* ==================================================
+   CAREERMIND AI
+   NAVBAR CSS - Unified Dark Theme
+   ================================================== */
+
+.navbar {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    background: var(--bg-elevated, #121828);
+    border-bottom: 1px solid var(--border, #232B42);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+/* BRAND */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text, #E9ECF6);
+}
+
+.brand-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: linear-gradient(135deg, var(--accent, #5EEAD4), var(--warm, #F5A623));
+    color: #0B0F1A;
+    font-size: 21px;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(94, 234, 212, 0.25);
+}
+
+.brand-name {
+    font-family: var(--font-display, 'Space Grotesk', sans-serif);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--text, #E9ECF6);
+}
+
+.brand-name span {
+    color: var(--accent, #5EEAD4);
+}
+
+/* RIGHT SIDE */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* NOTIFICATION BUTTON */
+.notification-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--border, #232B42);
+    border-radius: 11px;
+    background: var(--bg-card, #161D30);
+    color: var(--text, #E9ECF6);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.notification-button:hover {
+    background: var(--bg-elevated, #121828);
+    border-color: var(--accent, #5EEAD4);
+    transform: translateY(-1px);
+}
+
+.notification-icon {
+    font-size: 17px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    border-radius: 50%;
+    background: var(--danger, #F87171);
+    color: #ffffff;
+    border: 2px solid var(--bg-elevated, #121828);
+    font-size: 9px;
+    font-weight: 800;
+}
+
+/* PROFILE CONTAINER */
+.profile-container {
+    position: relative;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px 5px 5px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-profile:hover {
+    background: var(--bg-card, #161D30);
+    border-color: var(--border, #232B42);
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent-soft, rgba(94, 234, 212, 0.12));
+    color: var(--accent, #5EEAD4);
+    border: 1px solid var(--accent-dim, #2C6B63);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 100px;
+}
+
+.profile-name {
+    color: var(--text, #E9ECF6);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-role {
+    margin-top: 2px;
+    color: var(--text-dim, #8B93AC);
+    font-size: 11px;
+}
+
+.profile-arrow {
+    color: var(--text-dim, #8B93AC);
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.navbar-profile:hover .profile-arrow,
+.navbar-profile.active .profile-arrow {
+    color: var(--accent, #5EEAD4);
+}
+
+.navbar-profile.active .profile-arrow {
+    transform: rotate(180deg);
+}
+
+/* PROFILE DROPDOWN */
+.profile-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 210px;
+    padding: 8px;
+    background: var(--bg-card, #161D30);
+    border: 1px solid var(--border, #232B42);
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 2000;
+}
+
+.profile-menu.show {
+    display: block;
+    animation: profileMenuOpen 0.18s ease;
+}
+
+@keyframes profileMenuOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 12px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--text, #E9ECF6);
+    text-decoration: none;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.profile-menu-item:hover {
+    background: var(--bg-elevated, #121828);
+    color: var(--accent, #5EEAD4);
+}
+
+.profile-menu-item span:first-child {
+    width: 22px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.profile-menu-divider {
+    height: 1px;
+    background: var(--border, #232B42);
+    margin: 6px 4px;
+}
+
+.logout-item {
+    color: var(--danger, #F87171);
+}
+
+.logout-item:hover {
+    background: rgba(248, 113, 113, 0.12);
+    color: var(--danger, #F87171);
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        height: 64px;
+        padding: 0 16px;
+    }
+    .brand-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+    .brand-name {
+        font-size: 17px;
+    }
+    .navbar-actions {
+        gap: 10px;
+    }
+    .profile-info {
+        display: none;
+    }
+    .profile-arrow {
+        font-size: 16px;
+    }
+    .profile-menu {
+        width: 180px;
+    }
+}
